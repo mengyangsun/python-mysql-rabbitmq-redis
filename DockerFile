@@ -1,0 +1,10 @@
+FROM        python:3.5.0
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update \
+  && apt-get install -y rabbitmq-server --no-install-recommends \
+  && apt-get install -y redis-server --no-install-recommends \
+  && apt-get install -y mysql-server --no-install-recommends \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
